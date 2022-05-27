@@ -1,9 +1,11 @@
-<%= simple_form_for [@list] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<h1>Add a movie to <%=  @list.name%> </h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%# <%= f.error_notification %>
+  <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="form-input">
-    <%= f.input :name, placeholder: "Add a movie name" %>
     <%= f.input :comment, placeholder: "Add a comment" %>
+    <%= f.association :movie, collection: Movie.all %>
   </div>
   <div class="form-actions">
     <%= f.submit "Create", class: "btn btn-primary" %>
