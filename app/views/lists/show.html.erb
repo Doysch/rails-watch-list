@@ -6,7 +6,7 @@
 <li><%= bookmark.movie.title %></li>
 <li><%= bookmark.movie.overview %></li>
 <li><%= bookmark.movie.rating %></li>
-<img src="<%= bookmark.movie.poster_url %>" alt="" class="img-thumbnail">
+<%= image_tag bookmark.movie.poster_url %>
 <% end %>
 
 
