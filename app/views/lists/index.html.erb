@@ -1,11 +1,21 @@
- <div class="container">
-  <h1>Watch List</h1>
-  <div class="card-wrapper">
-    <% @lists.each do |list| %>
-       <%= link_to list.name, list_path(list) %>
-       <br>
-       <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(<%= asset_path('list_background.jpg') %>)">
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
   </div>
-  <br>
-  <%= link_to "Add new list", new_list_path %>
+ <div class="container mt-5">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <div class="card-category my-2" style="background-image: url(<%= cl_image_path list.photo.key, crop: :fill %>);">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>
