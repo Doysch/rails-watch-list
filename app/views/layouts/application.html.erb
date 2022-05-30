@@ -13,7 +13,7 @@
         <%= link_to "/lists", class: "navbar-brand" do %>
           <%= image_tag asset_path('film.jpg'), class: "rounded" %>
         <% end %>
-        <h1 style="color:white">My Film Watchlist</h1>
+        <h1 style="color:black">My Film Watchlist</h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,6 @@
               <%= link_to "Home", "#", class: "nav-link" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "/app/assets/images/list_background.jpg", class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Action", "#", class: "dropdown-item" %>
                 <%= link_to "Another action", "#", class: "dropdown-item" %>

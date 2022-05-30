@@ -7,7 +7,9 @@
   </div>
   <h1> <%= @list.name  %> </h1>
   <br>
-  <h2>Movies:</h2>
+  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
+  <br>
+  <%= link_to "Back to homepage", lists_path %>
   <div class="row my-2">
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
@@ -28,7 +30,5 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
-  <br>
-  <%= link_to "Back to homepage", lists_path %>
+
 </div>
